@@ -5,266 +5,519 @@ const PORT = process.env.PORT || 3000;
 
 // Static product data
 const products = [
-    {
-        id: 1,
-        title: "Generic",
-        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105",
-        description: "Elevate your style",
-        price: 840,
-        left_stock: 2,
-        discount: "-25%",
-        top_pattern: "Neck",
-        color: ["Red", "Green", "Blue", "Yellow", "White"],
-        size: ["XS", "S", "M", "L", "XL", "2XL", "3XL", "4XL"],
-        type: ["Reyon", "Cotton", "Linen", "Imported", "Cotton Blend"]
+{
+      "id": 1,
+      "title": "Generic",
+      "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105",
+      "description": "Elevate your style",
+      "price": 840,
+      "discount": "-25%",
+      "top_pattern": "Neck",
+      "variants": {
+        "Red": {
+          "XS": [
+            "Imported",
+            "Linen"
+          ],
+          "M": [
+            "Cotton Blend",
+            "Reyon",
+            "Linen"
+          ],
+          "L": [
+            "Cotton",
+            "Reyon"
+          ],
+          "XL": [
+            "Cotton",
+            "Cotton Blend",
+            "Reyon"
+          ]
+        },
+        "Green": {
+          "S": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "M": [
+            "Reyon",
+            "Cotton"
+          ],
+          "L": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "XL": [
+            "Cotton",
+            "Cotton Blend",
+            "Linen",
+            "Imported"
+          ]
+        },
+        "White": {
+          "XS": [
+            "Linen",
+            "Cotton Blend",
+            "Imported"
+            
+          ],
+          "S": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "M": [
+            "Reyon",
+            "Cotton"
+          ],
+          "L": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "XL": [
+            "Cotton",
+            "Cotton Blend",
+            "Linen",
+            "Imported"
+          ]
+        }
+        
+      }
     },
     {
-        id: 2,
-        title: "London hills",
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
-        description: "Women cords set",
-        price: 800,
-        left_stock: 1,
-        discount: "-10%",
-        top_pattern: "Top",
-        color: ["Green", "Yellow", "White"],
-        size: ["XS", "S", "3XL", "4XL"],
-        type: ["Reyon", "Cotton Blend"]
+      "id": 2,
+      "title": "London Hills",
+      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+      "description": "Women cords set",
+      "price": 800,
+      "discount": "-10%",
+      "top_pattern": "Top",
+      "variants": {
+        "Blue": {
+          "XS": [
+            "Imported",
+            "Reyon"
+          ],
+          "S": [
+            "Cotton",
+            "Linen"
+          ],
+          "M": [
+            "Cotton Blend",
+            "Imported",
+            "Linen"
+          ],
+          "L": [
+            "Imported",
+            "Reyon",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Cotton Blend",
+            "Cotton"
+          ]
+        }
+      }
     },
     {
-        id: 3,
-        title: "Go Sriki",
-        image: "https://images.unsplash.com/photo-1554568218-0f1715e72254",
-        description: "Elevate your style",
-        price: 1000,
-        left_stock: 5,
-        discount: "-15%",
-        top_pattern: "Neck",
-        color: ["Red", "Green"],
-        size: ["XS", "S", "M", "2XL", "3XL", "4XL"],
-        type: ["Reyon", "Cotton", "Linen", "Cotton Blend"]
+      "id": 3,
+      "title": "Urban Trend",
+      "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+      "description": "Stylish casual wear",
+      "price": 950,
+      "discount": "-15%",
+      "top_pattern": "Round Neck",
+      "variants": {
+        "Yellow": {
+          "XS": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "S": [
+            "Reyon",
+            "Imported"
+          ],
+          "M": [
+            "Cotton",
+            "Linen"
+          ],
+          "L": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Cotton",
+            "Cotton Blend"
+          ]
+        },
+        "White": {
+          "S": [
+            "Cotton",
+            "Linen"
+          ],
+          "M": [
+            "Reyon",
+            "Imported"
+          ],
+          "L": [
+            "Imported",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Cotton Blend",
+            "Reyon"
+          ]
+        }
+      }
     },
     {
-        id: 4,
-        title: "Litzo",
-        image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956",
-        description: "Dress for women",
-        price: 500,
-        left_stock: 2,
-        discount: "-15%",
-        top_pattern: "Cotton",
-        color: ["Red", "Blue", "Yellow", "White"],
-        size: ["XL", "2XL", "3XL", "4XL"],
-        type: ["Reyon", "Cotton"]
+      "id": 4,
+      "title": "Elite Wear",
+      "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+      "description": "Formal collection",
+      "price": 1020,
+      "discount": "-20%",
+      "top_pattern": "Collar",
+      "variants": {
+        "Blue": {
+          "XS": [
+            "Cotton Blend",
+            "Reyon"
+          ],
+          "S": [
+            "Reyon",
+            "Linen"
+          ],
+          "M": [
+            "Linen",
+            "Cotton"
+          ],
+          "L": [
+            "Cotton",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Imported",
+            "Cotton"
+          ]
+        },
+        "Green": {
+          "S": [
+            "Cotton",
+            "Linen"
+          ],
+          "M": [
+            "Reyon",
+            "Cotton Blend"
+          ],
+          "L": [
+            "Cotton Blend",
+            "Imported"
+          ],
+          "XL": [
+            "Linen",
+            "Reyon"
+          ]
+        },
+        "Red": {
+          "S": [
+            "Linen",
+            "Reyon"
+            
+          ],
+          "M": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "L": [
+            "Cotton Blend",
+            "Imported",
+            "Reyon"
+          ],
+          "XL": [
+            "Cotton Blend",
+            "Cotton",
+            "Imported"
+          ]
+        }
+        
+      }
     },
     {
-        id: 5,
-        title: "Amazon brand",
-        image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3",
-        description: "Top reviews",
-        price: 711,
-        left_stock: 1,
-        discount: "-45%",
-        top_pattern: "Neck",
-        color: ["Blue", "Yellow", "White"],
-        size: ["XS", "S", "3XL", "4XL"],
-        type: ["Cotton", "Linen", "Cotton Blend"]
+      "id": 5,
+      "title": "Casual Fit",
+      "image": "https://images.unsplash.com/photo-1591084728795-1149f32d9866",
+      "description": "Perfect daily wear",
+      "price": 700,
+      "discount": "-5%",
+      "top_pattern": "V Neck",
+      "variants": {
+        "Red": {
+          "XS": [
+            "Cotton",
+            "Reyon"
+          ],
+          "S": [
+            "Reyon",
+            "Linen"
+          ],
+          "M": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "L": [
+            "Cotton Blend",
+            "Imported"
+          ],
+          "XL": [
+            "Cotton Blend",
+            "Cotton"
+          ]
+        },
+        "White": {
+          "S": [
+            "Imported",
+            "Reyon"
+          ],
+          "M": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "L": [
+            "Cotton",
+            "Imported"
+          ],
+          "XL": [
+            "Linen",
+            "Cotton Blend"
+          ]
+        }
+      }
     },
     {
-        id: 6,
-        title: "CotLand",
-        image: "https://images.unsplash.com/photo-1538330627166-33d1908c210d",
-        description: "Elevate your style",
-        price: 1500,
-        left_stock: 2,
-        discount: "-25%",
-        top_pattern: "Neck",
-        color: ["Red", "Green", "Blue"],
-        size: ["XS", "S", "3XL", "4XL"],
-        type: ["Linen", "Imported", "Cotton Blend"]
+      "id": 6,
+      "title": "Trendy Look",
+      "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105",
+      "description": "Latest fashion trends",
+      "price": 850,
+      "discount": "-18%",
+      "top_pattern": "Boat Neck",
+      "variants": {
+        "Blue": {
+          "XS": [
+            "Imported",
+            "Cotton Blend"
+          ],
+          "S": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "M": [
+            "Cotton",
+            "Reyon"
+          ],
+          "L": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Reyon",
+            "Imported"
+          ]
+        },
+        "Green": {
+          "M": [
+            "Cotton",
+            "Reyon"
+          ],
+          "L": [
+            "Linen",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Reyon",
+            "Imported"
+          ]
+        },
+        "Red": {
+          "XS": [
+            "Imported",
+            "Cotton Blend"
+          ],
+          "S": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "M": [
+            "Cotton",
+            "Reyon"
+          ],
+          "L": [
+            "Linen",
+            "Cotton Blend"
+          ]
+          
+        }
+        
+      }
     },
     {
-        id: 7,
-        title: "Sun fashion",
-        image: "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7",
-        description: "Elevate your style",
-        price: 2500,
-        left_stock: 2,
-        discount: "-25%",
-        top_pattern: "Neck",
-        color: ["Red", "Green", "Blue", "Yellow"],
-        size: ["XS", "S", "M", "L", "XL", "4XL"],
-        type: ["Reyon", "Cotton", "Linen", "Imported"]
+      "id": 7,
+      "title": "Classic Touch",
+      "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c",
+      "description": "Timeless designs",
+      "price": 900,
+      "discount": "-12%",
+      "top_pattern": "Square Neck",
+      "variants": {
+        "Green": {
+          "XS": [
+            "Reyon",
+            "Cotton"
+          ],
+          "S": [
+            "Cotton",
+            "Linen"
+          ],
+          "M": [
+            "Cotton Blend",
+            "Reyon"
+          ],
+          "L": [
+            "Linen",
+            "Cotton"
+          ],
+          "XL": [
+            "Imported",
+            "Cotton Blend"
+          ]
+        }
+      }
     },
     {
-        id: 8,
-        title: "Trendy Wear",
-        image: "https://images.unsplash.com/photo-1551799517-eb8f03cb5e6a",
-        description: "Stylish and comfortable",
-        price: 1200,
-        left_stock: 3,
-        discount: "-20%",
-        top_pattern: "Round Neck",
-        color: ["Black", "White"],
-        size: ["S", "M", "L", "XL"],
-        type: ["Cotton", "Polyester"]
+      "id": 8,
+      "title": "Fashionista",
+      "image": "https://images.unsplash.com/photo-1434389677669-e08b4cac3105",
+      "description": "Make a statement",
+      "price": 780,
+      "discount": "-22%",
+      "top_pattern": "Off Shoulder",
+      "variants": {
+        "Blue": {
+          "XS": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "S": [
+            "Reyon",
+            "Cotton"
+          ],
+          "M": [
+            "Linen",
+            "Imported"
+          ]
+          
+        },
+        "Yellow": {
+          "XS": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "S": [
+            "Reyon",
+            "Cotton"
+          ],
+          "M": [
+            "Linen",
+            "Imported"
+          ],
+          "L": [
+            "Cotton",
+            "Cotton Blend"
+          ],
+          "XL": [
+            "Imported",
+            "Reyon"
+          ]
+        }
+      }
     },
     {
-        id: 9,
-        title: "Fashion Hub",
-        image: "https://images.unsplash.com/photo-1562157873-818bc0726f68",
-        description: "Casual wear for daily use",
-        price: 900,
-        left_stock: 4,
-        discount: "-18%",
-        top_pattern: "V Neck",
-        color: ["Blue", "Pink", "White"],
-        size: ["XS", "S", "M", "L", "XL"],
-        type: ["Cotton", "Linen"]
+      "id": 9,
+      "title": "Formal Bliss",
+      "image": "https://images.unsplash.com/photo-1520975916090-3105956dac38",
+      "description": "Perfect for office wear",
+      "price": 890,
+      "discount": "-14%",
+      "top_pattern": "Shirt Collar",
+      "variants": {
+        "Green": {
+          "XS": [
+            "Imported",
+            "Cotton Blend"
+          ],
+          "S": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "M": [
+            "Reyon",
+            "Imported"
+          ],
+          "L": [
+            "Cotton",
+            "Linen"
+          ]
+          
+        },
+        "White": {
+          "S": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "L": [
+            "Cotton",
+            "Linen"
+          ],
+          "XL": [
+            "Linen",
+            "Cotton Blend"
+          ]
+        }
+      }
     },
     {
-        id: 10,
-        title: "Elite Wear",
-        image: "https://images.unsplash.com/photo-1583759136431-9d70db2eb04c",
-        description: "Premium quality fashion",
-        price: 2000,
-        left_stock: 2,
-        discount: "-30%",
-        top_pattern: "Collar Neck",
-        color: ["Maroon", "Black"],
-        size: ["M", "L", "XL", "2XL"],
-        type: ["Silk", "Cotton Blend"]
+      "id": 10,
+      "title": "Minimalist",
+      "image": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+      "description": "Simple yet elegant",
+      "price": 720,
+      "discount": "-10%",
+      "top_pattern": "Crew Neck",
+      "variants": {
+        "Blue": {
+          "XS": [
+            "Cotton Blend",
+            "Linen"
+          ],
+          "S": [
+            "Linen",
+            "Reyon"
+          ],
+          "M": [
+            "Reyon",
+            "Cotton"
+          ],
+          "L": [
+            "Cotton",
+            "Imported"
+          ],
+          "XL": [
+            "Imported",
+            "Cotton Blend"
+          ]
+        }
+      }
     },
-    {
-        id: 11,
-        title: "FashionPoint",
-        image: "https://images.unsplash.com/photo-1554568218-fab8079e4653",
-        description: "Modern and stylish",
-        price: 1400,
-        left_stock: 2,
-        discount: "-35%",
-        top_pattern: "Collar Neck",
-        color: ["Red", "Yellow"],
-        size: ["S", "M", "L"],
-        type: ["Linen", "Silk"]
-    },
-    {
-        id: 12,
-        title: "Urban Chic",
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
-        description: "Trendy outfit",
-        price: 1200,
-        left_stock: 3,
-        discount: "-20%",
-        top_pattern: "Round Neck",
-        color: ["Black", "White", "Gray"],
-        size: ["S", "M", "L", "XL"],
-        type: ["Cotton", "Linen"]
-    },
-    {
-        id: 13,
-        title: "StyleWave",
-        image: "https://images.unsplash.com/photo-1548624149-f9461d5c1af1",
-        description: "Casual wear",
-        price: 950,
-        left_stock: 4,
-        discount: "-30%",
-        top_pattern: "V Neck",
-        color: ["Blue", "Green"],
-        size: ["M", "L", "XL", "2XL"],
-        type: ["Reyon", "Cotton Blend"]
-    },
-    {
-        id: 14,
-        title: "Comfort Plus",
-        image: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105",
-        description: "Everyday comfort wear",
-        price: 1100,
-        left_stock: 5,
-        discount: "-15%",
-        top_pattern: "Round Neck",
-        color: ["Navy", "Beige", "Pink"],
-        size: ["S", "M", "L", "XL", "2XL"],
-        type: ["Cotton", "Modal"]
-    },
-    {
-        id: 15,
-        title: "Elegance",
-        image: "https://images.unsplash.com/photo-1539008835657-9e8e9680c956",
-        description: "Premium party wear",
-        price: 2800,
-        left_stock: 2,
-        discount: "-40%",
-        top_pattern: "Halter Neck",
-        color: ["Gold", "Silver", "Black"],
-        size: ["XS", "S", "M", "L"],
-        type: ["Silk", "Satin"]
-    },
-    {
-        id: 16,
-        title: "Casual Vibes",
-        image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
-        description: "Perfect weekend wear",
-        price: 750,
-        left_stock: 6,
-        discount: "-20%",
-        top_pattern: "Crew Neck",
-        color: ["Olive", "Rust", "Brown"],
-        size: ["S", "M", "L", "XL"],
-        type: ["Cotton", "Linen Blend"]
-    },
-    {
-        id: 17,
-        title: "Athleisure",
-        image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3",
-        description: "Sports and leisure wear",
-        price: 1600,
-        left_stock: 4,
-        discount: "-25%",
-        top_pattern: "High Neck",
-        color: ["Gray", "Black", "Neon"],
-        size: ["XS", "S", "M", "L", "XL"],
-        type: ["Polyester", "Spandex"]
-    },
-    {
-        id: 18,
-        title: "Boho Chic",
-        image: "https://images.unsplash.com/photo-1538330627166-33d1908c210d",
-        description: "Bohemian style collection",
-        price: 1800,
-        left_stock: 3,
-        discount: "-30%",
-        top_pattern: "Off Shoulder",
-        color: ["Maroon", "Forest Green", "Mustard"],
-        size: ["S", "M", "L"],
-        type: ["Rayon", "Cotton"]
-    },
-    {
-        id: 19,
-        title: "Work Wear",
-        image: "https://images.unsplash.com/photo-1485462537746-965f33f7f6a7",
-        description: "Professional office attire",
-        price: 2200,
-        left_stock: 4,
-        discount: "-22%",
-        top_pattern: "Peter Pan Collar",
-        color: ["White", "Blue", "Black"],
-        size: ["XS", "S", "M", "L", "XL"],
-        type: ["Cotton Blend", "Polyester"]
-    },
-    {
-        id: 20,
-        title: "Evening Glam",
-        image: "https://images.unsplash.com/photo-1551799517-eb8f03cb5e6a",
-        description: "Evening party collection",
-        price: 3000,
-        left_stock: 2,
-        discount: "-35%",
-        top_pattern: "Sweetheart Neck",
-        color: ["Red", "Black", "Purple"],
-        size: ["XS", "S", "M", "L"],
-        type: ["Silk", "Velvet"]
-    }
 ];
 
 
